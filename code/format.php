@@ -68,6 +68,8 @@ $sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND remarks like "
 $sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "%bhl%"';
 $sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.2307%"';
 
+$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.1071%"';
+
 $data = do_query($pdo, $sql);
 
 foreach ($data as $obj)
