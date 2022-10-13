@@ -5,7 +5,7 @@
 	<key>EmbeddedEditorHidden:rpage</key>
 	<false/>
 	<key>ExpandedEditorWidth:rpage:displays([(0, 0), (3440, 1440)])</key>
-	<integer>1524</integer>
+	<integer>976</integer>
 	<key>ExpandedItems:rpage</key>
 	<array>
 		<string>EAE3294F-A655-4B07-AAD4-063A97869BC4</string>
@@ -17,8 +17,8 @@
 		<dict>
 			<key>BookmarkData</key>
 			<data>
-			Ym9va+gCAAAAAAQQMAAAAG3OLB86XrH1H3S/a/6UASv4xCkQGuqA
-			ImOyk1njcDyO5AEAAAQAAAADAwAAAAgAKAUAAAABAQAAVXNlcnMA
+			Ym9vayQDAAAAAAQQMAAAAPzZy8UlqX6FqNscctisPIbDivj2wjmh
+			upxtg5CeQ/BgFAIAAAQAAAADAwAAAAgAKAUAAAABAQAAVXNlcnMA
 			AAAFAAAAAQEAAHJwYWdlAAAACwAAAAEBAABEZXZlbG9wbWVudAAK
 			AAAAAQEAAGlwbmktY29sZHAAAAoAAAABAQAALmdpdGlnbm9yZQAA
 			FAAAAAEGAAAQAAAAIAAAADAAAABEAAAAWAAAAAgAAAAEAwAAhFwA
@@ -30,13 +30,14 @@
 			AABNYWNpbnRvc2ggSEQIAAAABAMAAACQgpbnAAAACAAAAAAEAABB
 			xFsP/YAAACQAAAABAQAARUVEQkM0OTUtREY1Mi00NTZBLUI0MzEt
 			RkI2MDdCRjA0QUQxGAAAAAECAACBAAAAAQAAAO8TAAABAAAAAAAA
-			AAAAAAABAAAAAQEAAC8AAAAAAAAAAQUAAMwAAAD+////AQAAAAAA
-			AAAQAAAABBAAAGwAAAAAAAAABRAAANgAAAAAAAAAEBAAAAQBAAAA
-			AAAAQBAAAPQAAAAAAAAAAiAAANABAAAAAAAABSAAAEABAAAAAAAA
-			ECAAAFABAAAAAAAAESAAAIQBAAAAAAAAEiAAAGQBAAAAAAAAEyAA
-			AHQBAAAAAAAAICAAALABAAAAAAAAMCAAANwBAAAAAAAAAcAAACQB
-			AAAAAAAAEcAAACAAAAAAAAAAEsAAADQBAAAAAAAAENAAAAQAAAAA
-			AAAA
+			AAAAAAABAAAAAQEAAC8AAAAAAAAAAQUAABoAAAABAQAATlNVUkxE
+			b2N1bWVudElkZW50aWZpZXJLZXkAAAQAAAADAwAAr2sAANgAAAD+
+			////AQAAAAAAAAARAAAABBAAAGwAAAAAAAAABRAAANgAAAAAAAAA
+			EBAAAAQBAAAAAAAAQBAAAPQAAAAAAAAAAiAAANABAAAAAAAABSAA
+			AEABAAAAAAAAECAAAFABAAAAAAAAESAAAIQBAAAAAAAAEiAAAGQB
+			AAAAAAAAEyAAAHQBAAAAAAAAICAAALABAAAAAAAAMCAAANwBAAAA
+			AAAAAcAAACQBAAAAAAAAEcAAACAAAAAAAAAAEsAAADQBAAAAAAAA
+			ENAAAAQAAAAAAAAA5AEAgAgCAAAAAAAA
 			</data>
 			<key>FileURL</key>
 			<string>file:///Users/rpage/Development/ipni-coldp/.gitignore</string>
@@ -270,7 +271,7 @@
 	<key>OpenDocumentsExpanded</key>
 	<true/>
 	<key>OpenDocumentsSplitterProportion</key>
-	<real>0.48760330578512401</real>
+	<real>0.50698174006444685</real>
 	<key>ProjectItemsExpanded</key>
 	<true/>
 	<key>ProjectViewVisible</key>
@@ -279,7 +280,7 @@
 	<array>
 		<dict>
 			<key>Date</key>
-			<date>2022-10-13T14:11:34Z</date>
+			<date>2022-10-13T14:54:44Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -320,7 +321,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2022-10-13T14:11:34Z</date>
+			<date>2022-10-13T14:54:44Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -363,7 +364,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2022-10-13T14:11:34Z</date>
+			<date>2022-10-13T14:54:44Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -405,7 +406,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2022-10-13T14:11:34Z</date>
+			<date>2022-10-13T14:54:44Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -447,7 +448,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2022-10-13T14:11:34Z</date>
+			<date>2022-10-13T14:54:44Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -489,7 +490,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2022-10-13T14:11:34Z</date>
+			<date>2022-10-13T14:54:44Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -533,7 +534,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2022-10-13T14:11:34Z</date>
+			<date>2022-10-13T14:54:44Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -576,7 +577,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2022-10-13T14:11:34Z</date>
+			<date>2022-10-13T14:54:44Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -619,7 +620,7 @@
 		</dict>
 		<dict>
 			<key>Date</key>
-			<date>2022-10-13T14:11:34Z</date>
+			<date>2022-10-13T14:54:44Z</date>
 			<key>Location</key>
 			<dict>
 				<key>BookmarkData</key>
@@ -671,8 +672,8 @@
 	<key>ToolbarVisible:rpage</key>
 	<false/>
 	<key>ViewSplitterPosition:rpage</key>
-	<real>0.11754487454891205</real>
+	<real>0.17217981815338135</real>
 	<key>WindowFrame:rpage:displays([(0, 0), (3440, 1440)])</key>
-	<string>rect(269,211,1237,1938)</string>
+	<string>rect(269,211,1200,1390)</string>
 </dict>
 </plist>

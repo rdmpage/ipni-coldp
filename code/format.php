@@ -53,6 +53,21 @@ $sql = 'SELECT DISTINCT doi FROM `names` WHERE doi="10.1017/S0960428600220428"';
 
 $sql = 'SELECT doi FROM `references` where citation like "%  %";';
 
+$sql = 'SELECT DISTINCT doi FROM names WHERE doi LIKE "10.15781%"';
+$sql = 'SELECT DISTINCT doi FROM names WHERE doi LIKE "10.5169%"';
+$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.3897%"';
+
+$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.4%"';
+$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.3%"';
+$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.1017%"';
+
+$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.18942%"';
+$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doiagency ="medra"';
+$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND remarks like "%doi.org%" and doi is not null';
+
+$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "%bhl%"';
+$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.2307%"';
+
 $data = do_query($pdo, $sql);
 
 foreach ($data as $obj)
