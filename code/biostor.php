@@ -48,6 +48,11 @@ function post($url, $data = '', $content_type = '')
 //----------------------------------------------------------------------------------------
 $sql = 'SELECT DISTINCT biostor FROM names WHERE biostor IS NOT NULL AND issn="0240-8937"';
 
+$sql = 'SELECT DISTINCT biostor FROM names WHERE doi IS NULL AND biostor IS NOT NULL AND issn="0944-0178"';
+
+$sql = 'SELECT DISTINCT biostor FROM names WHERE citation IS NULL AND doi IS NULL AND biostor IS NOT NULL';
+
+
 $data = do_query($pdo, $sql);
 
 foreach ($data as $obj)

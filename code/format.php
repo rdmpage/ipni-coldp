@@ -63,12 +63,21 @@ $sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.1
 
 $sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.18942%"';
 $sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doiagency ="medra"';
-$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND remarks like "%doi.org%" and doi is not null';
+$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND remarks like "%doi.org%" and doi is not null and not doi LIKE "10.6165/tai.%"';
 
-$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "%bhl%"';
-$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.2307%"';
+//$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "%bhl%"';
+//$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.2307%"';
 
-$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.1071%"';
+//$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.1071%"';
+
+$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi LIKE "10.11646%"';
+
+$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi IS NOT NULL AND Publication="Willdenowia"';
+
+$sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi IS NOT NULL AND doiagency="crossref"';
+
+$sql = 'SELECT DISTINCT doi FROM names WHERE  doi IS NOT NULL AND issn="0077-1813"';
+
 
 $data = do_query($pdo, $sql);
 
