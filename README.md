@@ -1,8 +1,14 @@
 # International Plant Names Index (IPNI) as a Catalogue of Life Data Package (ColDP)
 
-A version of [International Plant Names Index (IPNI)](https://www.ipni.org) with persistent identifiers (e.g., DOIs) for literature added. 
+[![DOI](https://zenodo.org/badge/528876012.svg)](https://zenodo.org/badge/latestdoi/528876012)
 
-## Issues
+A version of [International Plant Names Index (IPNI)](https://www.ipni.org) with the addition of persistent identifiers (e.g., DOIs). 
+
+## Notes
+
+### Exports and releases
+
+The data to add to ChecklistBank are held in views in the SQLIte database. These views, together with the `metadata.yml` file comprise a release. Releases are versioned by date.
 
 ### Triggers
 

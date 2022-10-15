@@ -1,4 +1,4 @@
-# doi: 
+doi: 10.5281/zenodo.7208699
 title: International Plant Names Index with Literature
 alias: IPNI Literature
 description: "This dataset builds upon the International Plant Names Index (IPNI) by adding persistent identifiers for publications (e.g., DOIs). The goal is to have every scientific name linked to a citable identifier for the corresponding publication.\nThe original IPNI database is CC-BY, this mapping between names, publications and DOIs is CC-0."
