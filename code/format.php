@@ -76,7 +76,7 @@ $sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi IS NOT NUL
 
 $sql = 'SELECT DISTINCT doi FROM names WHERE citation IS NULL AND doi IS NOT NULL AND doiagency="crossref"';
 
-$sql = 'SELECT DISTINCT doi FROM names WHERE  doi IS NOT NULL AND issn="0077-1813"';
+//$sql = 'SELECT DISTINCT doi FROM names WHERE doi IS NOT NULL AND issn="0077-1813"';
 
 
 $data = do_query($pdo, $sql);
