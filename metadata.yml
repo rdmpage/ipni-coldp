@@ -2,8 +2,8 @@
 title: International Plant Names Index with Literature
 alias: IPNI Literature
 description: "This dataset builds upon the International Plant Names Index (IPNI) by adding persistent identifiers for publications (e.g., DOIs). The goal is to have every scientific name linked to a citable identifier for the corresponding publication.\nThe original IPNI database is CC-BY, this mapping between names, publications and DOIs is CC-0."
-released: 2022-10-13
-version: 2022-10-13
+released: 2022-10-15
+version: 2022-10-15
 contact:
   - given: Roderic
     family: Page
@@ -17,7 +17,7 @@ contact:
 geographicScope: Global
 taxonomicScope: Plantae
 confidence: 
-completeness: 0
+completeness: 15.9
 license: CC-0
 source:
 
