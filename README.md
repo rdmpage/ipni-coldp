@@ -8,7 +8,36 @@ A version of [International Plant Names Index (IPNI)](https://www.ipni.org) with
 
 ### Exports and releases
 
-The data to add to ChecklistBank are held in views in the SQLIte database. These views, together with the `metadata.yml` file comprise a release. Releases are versioned by date.
+The data to add to ChecklistBank are held in the views `names_with_references` and `references` in the SQLIte database. These views should be exported as `names.tsv` and `references.tsv` respectively (in tab-delimited format), and together with the `metadata.yml` file comprise a release.  Releases are versioned by date, and automatically get assigned a DOI via Zenodo. 
+
+Note that the release should only include ColDP files so anything else should not be in the release. Add any unwanted files to a file called `.gitattributes`:
+
+```
+/code export-ignore
+/junk export-ignore
+*.db export-ignore
+*.bbprojectd export-ignore
+*.md export-ignore
+*.rested export-ignore
+
+*.gitattributes export-ignore
+*.gitignore export-ignore
+```
+
+### Adding to ChecklistBank
+
+For now this process is not automated, so we need to manually upload the three files (names.tsv`, `references.tsv`, and `metadata.yml`) to ChecklistBank.
+
+### Triple store
+
+Create triples using `export-triples.php` which generates triples creating taxon name and linking to publication. Can upload to local Oxigraph for testing and exploration. 
+
+```
+curl 'http://localhost:7878/store?graph=https://www.ipni.org' -H 'Content-Type:application/n-triples' --data-binary '@triples.nt'  --progress-bar
+```
+
+
+## Issues
 
 ### Triggers
 
@@ -70,4 +99,8 @@ UPDATE names SET referenceID =
 WHERE id = old.id;
 END;
 ```
+
+### Missing names
+
+- [Toxicodendron oligophyllum](https://www.checklistbank.org/dataset/20231/taxon/038FCC78D27DAE3EFF6BF8FCD4E9FC5E.taxon) is a treatment for a taxon not yet in local copy of IPNI.
 

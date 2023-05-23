@@ -4,5 +4,11 @@
 code/junk
 
 code/*.sql
+code/mysql-data/
 
+*.nt
 *.zip
+
+/other-data/
+
+/vendor/
