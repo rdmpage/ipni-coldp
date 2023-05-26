@@ -1,9 +1,14 @@
 /code export-ignore
 /junk export-ignore
+
 *.db export-ignore
 *.bbprojectd export-ignore
 *.md export-ignore
 *.rested export-ignore
 
+*.json export-ignore
+*.lock export-ignore
+
 *.gitattributes export-ignore
 *.gitignore export-ignore
+

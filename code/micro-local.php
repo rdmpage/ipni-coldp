@@ -120,10 +120,12 @@ $sql = 'SELECT * FROM names WHERE issn="0254-6299"';
 $sql = 'SELECT * FROM names WHERE issn="0075-5974" and doi is null';
 $sql = 'SELECT * FROM names WHERE issn="0211-1322" and publicationyearfull LIKE "2%"';
 
+$sql = 'SELECT * FROM names WHERE issn="0524-0476" and wikidata is null';
+//$sql = 'SELECT * FROM names WHERE issn="0210-9506" and doi is null';
 
+//$sql = 'SELECT * FROM names WHERE id="77119449-1"';
 
-
-$sql .= ' AND doi is NULL';
+//$sql .= ' AND doi is NULL';
 //$sql .= ' AND wikidata is NULL';
 //$sql .= ' AND jstor is NULL';
 
@@ -186,6 +188,18 @@ foreach ($query_result as $data)
 			{
 				$doc->ISSN[0] = '1988-3196';
 			}
+
+			if ($data->issn == '0210-9506')
+			{
+				$doc->ISSN[0] = '2340-5074';
+			}
+
+			if ($data->issn == '0524-0476')
+			{
+				//$doc->ISSN[0] = '1853-8460';
+			}
+			
+			
 			
 		}
 		
@@ -259,6 +273,11 @@ foreach ($query_result as $data)
 		if ($doc && isset($doc->URL) && count($doc->URL) == 1)
 		{
 			// echo 'UPDATE names SET url = "' . $doc->URL[0] . '" WHERE id="' . $data->id . '";' . "\n";
+			
+			if (preg_match('/https?:\/\/www.jstor.org\/stable\/(?<id>\d+)/', $doc->URL[0], $m))
+			{
+				echo 'UPDATE names SET jstor = "' . $m['id']. '" WHERE id="' . $data->id . '";' . "\n";					
+			}
 		}
 		
 		
