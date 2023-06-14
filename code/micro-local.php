@@ -123,6 +123,9 @@ $sql = 'SELECT * FROM names WHERE issn="0211-1322" and publicationyearfull LIKE 
 $sql = 'SELECT * FROM names WHERE issn="0524-0476" and wikidata is null';
 //$sql = 'SELECT * FROM names WHERE issn="0210-9506" and doi is null';
 
+$sql = 'SELECT * FROM names WHERE issn="0367-1615" and doi is null AND publicationyearfull > "1904"';
+
+
 //$sql = 'SELECT * FROM names WHERE id="77119449-1"';
 
 //$sql .= ' AND doi is NULL';
@@ -133,7 +136,7 @@ $debug = true;
 $debug = false;
 
 $include_authors = true; // more accuracy
-$include_authors = false;
+//$include_authors = false;
 
 $query_result = do_query($sql);
 
