@@ -71,7 +71,12 @@ $sql = 'SELECT * FROM names WHERE issn="0075-5974" and doi is null';
 $sql = 'SELECT * FROM names WHERE issn="0368-8895"';
 $sql = 'SELECT * FROM names WHERE issn="0258-1485" and jstor IS NULL and doi is null';
 
-//$sql = 'SELECT * FROM names WHERE id="873015-1"';
+$sql = 'SELECT * FROM names WHERE id="360316-1"';
+
+
+$sql = 'SELECT * FROM names WHERE issn="0006-808X" and doi is null';
+
+$sql = 'SELECT * FROM names WHERE issn="0006-8241" and doi is null';
 
 
 $debug = true;
@@ -118,6 +123,8 @@ foreach ($query_result as $data)
 	}
 	
 	$string = join(' ', $terms);
+	
+	echo "-- $string\n";
 		
 	$url = 'http://localhost/citation-matching/api/parser.php?q=' . urlencode($string);
 
@@ -182,7 +189,7 @@ foreach ($query_result as $data)
 				
 				$literal = preg_replace('/\.$/', '', $literal);
 		
-				echo "--literal=$literal\n";
+				echo "-- literal=$literal\n";
 		
 				$literal = trim($literal);
 		

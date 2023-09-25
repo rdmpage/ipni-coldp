@@ -125,8 +125,15 @@ $sql = 'SELECT * FROM names WHERE issn="0524-0476" and wikidata is null';
 
 $sql = 'SELECT * FROM names WHERE issn="0367-1615" and doi is null AND publicationyearfull > "1904"';
 
+$sql = 'SELECT * FROM names WHERE issn="0084-800X" and wikidata is null';
+$sql = 'SELECT * FROM names WHERE issn="0373-2975" and doi is null';
 
-//$sql = 'SELECT * FROM names WHERE id="77119449-1"';
+$sql = 'SELECT * FROM names WHERE issn="0016-5301" and doi is null';
+$sql = 'SELECT * FROM names WHERE issn="0077-1813" and doi is null';
+
+$sql = 'SELECT * FROM names WHERE issn="0022-2062" and doi is null';
+
+//$sql = 'SELECT * FROM names WHERE id="1007043-1"';
 
 //$sql .= ' AND doi is NULL';
 //$sql .= ' AND wikidata is NULL';
@@ -136,7 +143,7 @@ $debug = true;
 $debug = false;
 
 $include_authors = true; // more accuracy
-//$include_authors = false;
+$include_authors = false;
 
 $query_result = do_query($sql);
 
@@ -167,7 +174,8 @@ foreach ($query_result as $data)
 
 	if ($debug)
 	{
-		echo $json;
+		echo "\nResult from parser\n";
+		echo $json . "\n";
 	}
 	
 	$doc = json_decode($json);
@@ -202,6 +210,11 @@ foreach ($query_result as $data)
 				//$doc->ISSN[0] = '1853-8460';
 			}
 			
+			// Gayana. Botánica
+			if ($data->issn == '0016-5301')
+			{
+				$doc->ISSN[0] = '0717-6643';
+			}
 			
 			
 		}
@@ -212,10 +225,30 @@ foreach ($query_result as $data)
 			if (isset($data->publishingauthor))
 			{
 				$literal = $data->publishingauthor;
+				
+				// ex
+				if (preg_match('/ex\s+(.*)$/', $literal, $m))
+				{
+					$literal = trim($m[1]);
+				}				
+				
+				// hacks to fix
+				if ($literal == 'A.J.Br.')
+				{
+					$literal = 'Brown';
+				}
+
+				if ($debug)
+				{
+					echo "literal=|$literal|\n";
+				}
 	
 				$literal = preg_replace('/.*\)\s+/', '', $literal);
 		
-				//echo $literal . "\n";
+				if ($debug)
+				{
+					echo "literal=|$literal|\n";
+				}
 		
 				// multiple authors, split on "&"
 				if (preg_match('/^([^\&]+)\&/', $literal, $m))
@@ -223,7 +256,10 @@ foreach ($query_result as $data)
 					$literal = trim($m[1]);
 				}
 		
-				//echo $literal . "\n";
+				if ($debug)
+				{
+					echo "literal=|$literal|\n";
+				}
 		
 				// split on ","
 				if (preg_match('/^([^,]+),/', $literal, $m))
@@ -238,7 +274,11 @@ foreach ($query_result as $data)
 				
 				$literal = preg_replace('/\.$/', '', $literal);
 		
-				//echo $literal . "\n";
+				if ($debug)
+				{
+					echo "literal=|$literal|\n";
+					//exit();
+				}
 		
 				$literal = trim($literal);
 		
@@ -249,6 +289,12 @@ foreach ($query_result as $data)
 			}
 		}
 		
+		/*
+		if ($debug)
+		{
+			print_r($doc);
+		}
+		*/
 		
 		$url = 'http://localhost/microcitation-lite/api/micro.php';
 	

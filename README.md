@@ -6,6 +6,16 @@ A version of [International Plant Names Index (IPNI)](https://www.ipni.org) with
 
 ## Notes
 
+### Versioning
+
+Between releases we can use [csvdiff](https://github.com/aswinkarthik/csvdiff) to compare TSV files and publish those diff files so that users can see what has changed.
+
+For example,
+
+```
+csvdiff references.tsv references-new.tsv -s "\t"
+```
+
 ### Exports and releases
 
 The data to add to ChecklistBank are held in the views `names_with_references` and `references` in the SQLIte database. These views should be exported as `names.tsv` and `references.tsv` respectively (in tab-delimited format), and together with the `metadata.yml` file comprise a release.  Releases are versioned by date, and automatically get assigned a DOI via Zenodo. 
