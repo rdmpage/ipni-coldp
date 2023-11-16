@@ -14,7 +14,7 @@ $basedir = $caches[$database];
 
 $files1 = scandir($basedir);
 
-//$files1 = array('20002');
+//$files1 = array('20009');
 
 foreach ($files1 as $directory)
 {
@@ -24,6 +24,8 @@ foreach ($files1 as $directory)
 		$files2 = scandir($basedir . '/' . $directory);
 		
 		//print_r($files2);
+		
+		//$files2 = array('20009104-1.xml');
 
 		// individual XML files
 		
@@ -42,6 +44,9 @@ foreach ($files1 as $directory)
 				//echo $xml "\n";
 				
 				$obj = new stdclass;
+				
+				$flag_dcterms = false;
+				$flag_bhl = false;
 				
 				// do stuff here
 				$dom= new DOMDocument;
@@ -83,6 +88,16 @@ foreach ($files1 as $directory)
 					foreach($xpath->query('dc:title', $p) as $node)
 					{
 						$obj->name = $node->firstChild->nodeValue;
+					}
+					
+					if (!isset($obj->name ))
+					{
+						foreach($xpath->query('dcterms:title', $p) as $node)
+						{
+							$obj->name = $node->firstChild->nodeValue;
+						
+							$flag_dcterms = true;
+						}
 					}
 					
 					// alias
@@ -152,41 +167,83 @@ foreach ($files1 as $directory)
 						}
 					}
 					
+					if (!$flag_bhl)
+					{					
+						foreach($xpath->query('dcterms:bibliographicCitation', $p) as $node)
+						{
+							if (isset($node->firstChild))
+							{
+								if (preg_match('/(www.)?biodiversitylibrary.org\/page\/(?<bhl>\d+)/', $node->firstChild->nodeValue, $m))
+								{
+									$obj->bhl = $m['bhl'];
+									$flag_bhl = true;
+								}
+							}
+						}
+					}
+					
+					
 					
 				}
 				
 				
 				// print_r($obj);
 				
-				$keys = array();
-				$values = array();
-
-				foreach ($obj as $k => $v)
+				if (0)
 				{
-					$keys[] = '"' . $k . '"'; // must be double quotes
+					// bulk add
+				
+					$keys = array();
+					$values = array();
 
-					if (is_array($v))
+					foreach ($obj as $k => $v)
 					{
-						$values[] = "'" . str_replace("'", "''", json_encode(array_values($v))) . "'";
+						$keys[] = '"' . $k . '"'; // must be double quotes
+
+						if (is_array($v))
+						{
+							$values[] = "'" . str_replace("'", "''", json_encode(array_values($v))) . "'";
+						}
+						elseif(is_object($v))
+						{
+							$values[] = "'" . str_replace("'", "''", json_encode($v)) . "'";
+						}
+						elseif (preg_match('/^POINT/', $v))
+						{
+							$values[] = "ST_GeomFromText('" . $v . "', 4326)";
+						}
+						else
+						{               
+							$values[] = "'" . str_replace("'", "''", $v) . "'";
+						}                   
 					}
-					elseif(is_object($v))
-					{
-						$values[] = "'" . str_replace("'", "''", json_encode($v)) . "'";
-					}
-					elseif (preg_match('/^POINT/', $v))
-					{
-						$values[] = "ST_GeomFromText('" . $v . "', 4326)";
-					}
-					else
-					{               
-						$values[] = "'" . str_replace("'", "''", $v) . "'";
-					}                   
+
+					$sql = 'INSERT INTO authors (' . join(",", $keys) . ') VALUES (' . join(",", $values) . ') ON CONFLICT DO NOTHING;';                   
+					$sql .= "\n";
+
+					echo $sql;
 				}
+				
+				if (1)
+				{
+					if ($flag_dcterms)
+					{
+						$sql = "UPDATE authors SET name='" . str_replace("'", "''", $obj->name) . "' WHERE id='" . $obj->id . "';";
+						$sql .= "\n";
 
-				$sql = 'INSERT INTO authors (' . join(",", $keys) . ') VALUES (' . join(",", $values) . ') ON CONFLICT DO NOTHING;';                   
-				$sql .= "\n";
+						echo $sql;
+					}
+					
+					if ($flag_bhl)
+					{
+						$sql = "UPDATE authors SET bhl='" . $obj->bhl . "' WHERE id='" . $obj->id . "';";
+						$sql .= "\n";
 
-				echo $sql;
+						echo $sql;
+					}
+					
+				
+				}
 				
 			}
 		}		
