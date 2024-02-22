@@ -9,6 +9,14 @@ code/mysql-data/
 *.nt
 *.zip
 
+/junk/
+
 /other-data/
 
+/names/rdf/
+
+/tmp/
+
 /vendor/
+
+
