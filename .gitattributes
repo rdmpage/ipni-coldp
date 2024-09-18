@@ -1,5 +1,8 @@
+/authors export-ignore
 /code export-ignore
 /junk export-ignore
+/names export-ignore
+/reading export-ignore
 *.bbprojectd export-ignore
 *.md export-ignore
 *.rested export-ignore
