@@ -6,6 +6,20 @@ A version of [International Plant Names Index (IPNI)](https://www.ipni.org) with
 
 ## Notes
 
+### Coverage
+
+```
+SELECT COUNT(Id) FROM names;
+1781565
+```
+
+```
+SELECT COUNT(Id) FROM names_with_references;
+444478
+```
+
+covrage = (100 * 444478) / 1781565 = 24.9
+
 ### Versioning
 
 Between releases we can use [csvdiff](https://github.com/aswinkarthik/csvdiff) to compare TSV files and publish those diff files so that users can see what has changed.
