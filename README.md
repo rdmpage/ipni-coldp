@@ -1,6 +1,6 @@
 # International Plant Names Index (IPNI) as a Catalogue of Life Data Package (ColDP)
 
-[![DOI](https://zenodo.org/badge/528876012.svg)](https://zenodo.org/badge/latestdoi/528876012)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7208699.svg)](https://doi.org/10.5281/zenodo.7208699)
 
 A version of [International Plant Names Index (IPNI)](https://www.ipni.org) with the addition of persistent identifiers (e.g., DOIs). 
 
@@ -13,7 +13,7 @@ Between releases we can use [csvdiff](https://github.com/aswinkarthik/csvdiff) t
 For example,
 
 ```
-csvdiff references.tsv references-new.tsv -s "\t"
+csvdiff references-old.tsv references.tsv -s "\t" > references.diff
 ```
 
 ### Exports and releases
@@ -36,7 +36,7 @@ Note that the release should only include ColDP files so anything else should no
 
 ### Adding to ChecklistBank
 
-For now this process is not automated, so we need to manually upload the three files (names.tsv`, `references.tsv`, and `metadata.yml`) to ChecklistBank.
+For now this process is not automated, so we need to manually upload the three files (`names.tsv`, `references.tsv`, and `metadata.yml`) to ChecklistBank.
 
 ### Triple store
 
@@ -112,7 +112,7 @@ END;
 
 ### Missing names
 
-- [Toxicodendron oligophyllum](https://www.checklistbank.org/dataset/20231/taxon/038FCC78D27DAE3EFF6BF8FCD4E9FC5E.taxon) is a treatment for a taxon not yet in local copy of IPNI.
+- [~~Toxicodendron oligophyllum](https://www.checklistbank.org/dataset/20231/taxon/038FCC78D27DAE3EFF6BF8FCD4E9FC5E.taxon) is a treatment for a taxon not yet in local copy of IPNI~~.
 
 ### BHL page ids
 
