@@ -133,6 +133,14 @@ $sql = 'SELECT * FROM names WHERE issn="0077-1813" and doi is null';
 
 $sql = 'SELECT * FROM names WHERE issn="0022-2062" and doi is null';
 
+$sql = 'SELECT * FROM names WHERE issn="0040-0262" and doi is null and collation != "" AND publicationyearfull LIKE "202%"';
+
+$sql = 'SELECT * FROM names WHERE issn="0022-2062" and doi is null and collation != "" AND publicationyearfull LIKE "2%"';
+
+
+$sql = 'SELECT * FROM names WHERE issn="0096-3844" and jstor is null and collation != ""';
+
+
 //$sql = 'SELECT * FROM names WHERE id="1007043-1"';
 
 //$sql .= ' AND doi is NULL';
@@ -143,7 +151,7 @@ $debug = true;
 $debug = false;
 
 $include_authors = true; // more accuracy
-$include_authors = false;
+//$include_authors = false;
 
 $query_result = do_query($sql);
 
@@ -169,6 +177,8 @@ foreach ($query_result as $data)
 	$string = join(' ', $terms);
 		
 	$url = 'http://localhost/citation-matching/api/parser.php?q=' . urlencode($string);
+	
+	//echo "-- $url\n";
 
 	$json = get($url);
 

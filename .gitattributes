@@ -1,6 +1,5 @@
 /code export-ignore
 /junk export-ignore
-*.db filter=lfs diff=lfs merge=lfs -text
 *.bbprojectd export-ignore
 *.md export-ignore
 *.rested export-ignore

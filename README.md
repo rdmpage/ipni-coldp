@@ -18,7 +18,7 @@ csvdiff references.tsv references-new.tsv -s "\t"
 
 ### Exports and releases
 
-The data to add to ChecklistBank are held in the views `names_with_references` and `references` in the SQLIte database. These views should be exported as `names.tsv` and `references.tsv` respectively (in tab-delimited format), and together with the `metadata.yml` file comprise a release.  Releases are versioned by date, and automatically get assigned a DOI via Zenodo. 
+The data to add to ChecklistBank are held in the views `names_with_references` and `references` in the SQLite database. These views should be exported as `names.tsv` and `references.tsv` respectively (in tab-delimited format), and together with the `metadata.yml` file comprise a release.  Releases are versioned by date, and automatically get assigned a DOI via Zenodo. 
 
 Note that the release should only include ColDP files so anything else should not be in the release. Add any unwanted files to a file called `.gitattributes`:
 
@@ -113,4 +113,16 @@ END;
 ### Missing names
 
 - [Toxicodendron oligophyllum](https://www.checklistbank.org/dataset/20231/taxon/038FCC78D27DAE3EFF6BF8FCD4E9FC5E.taxon) is a treatment for a taxon not yet in local copy of IPNI.
+
+### BHL page ids
+
+| field | meaning |
+|--|--|
+| bhl_original | BHL from MySQL version of this database |
+| bhl | new for this database |
+| bhl_ipni | PageID from IPNI |
+| bhl_openurl_ipni | IPNI OpenURL link |
+| bhl_gnames | PageID from Global Names project |
+
+
 
